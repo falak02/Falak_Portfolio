@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+    <link rel="stylesheet "  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+    <header> 
+        <div class="user">
+            <img src="./assets/girl.png" alt="user">
+           
+            <h1 class="name"> Falak Naaz Khan</h1>
+            <p class="post">Front-End Developer</p>
+        </div>
+
+        <nav class="navbar">
+            <ul> 
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+
+   
+<div id="menu" class="fas fa-bars"></div>
+<section class="home" id="home">
+    <h3>Hi there!</h3>
+    <h1>I'm <span>Falak Khan</span></h1>
+    <p>I'm a Tech wizard and a dedicated computer engineering diploma student,
+        specializing in a range of programming languages and technologies. Proficient
+        in HTML, JavaScript, SQL, MongoDB, Css, and Python basics, I'm passionate
+        about translating ideas into functional and innovative digital. solutions. My
+        academic journey has equipped me with a solid foundation of creative
+        problem- solving and coding expertise.</p>
+    <a href="#about"><button class="btn">About me <i class="fas fa-user"></i></button></a>
+</section>
+
+<section class="about" id="about">
+    <h1 class="heading"><span>About</span> me</h1>
+    <div class="row">
+        <div class="info">
+            <h3><span> Name : </span> Falak  Naaz Khan</h3>
+            <h3><span> Age : </span> 18 </h3>
+            <h3><span> Qualification : </span> Diploma </h3>
+            <h3><span> Post : </span> Front-end Developer </h3>
+            <h3><span> Languages: </span> English, Hindi , Urdu </h3>
+            <a href="https://drive.google.com/file/d/1gTFrzEOvy6F9L3jHbe2W72vTceZX7Xl2/view?usp=drivesdk" target="_blank"><button class="btn"> Resume <i class="fas fa-download"></i></button></a>
+        </div>
+        <div class="counter">
+            <div class="box">
+                <span>1+</span>
+                <h3>years of experience</h3>
+            </div>
+            <div class="box">
+                <span>4+</span>
+                <h3>projects completed</h3>
+            </div>
+            <div class="box">
+                <span>3+</span>
+                <h3>Certificates in courses</h3>
+            </div>
+            <div class="box">
+                <span>5+</span>
+                <h3>programming languages</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="education" id="education">
+    <h1 class="heading"> My <span>Education</span></h1>
+    <div class="box-container">
+        <div class="box">
+            <i class="fas fa-graduation-cap"></i>
+            <span>2021</span>
+            <h3>SSC</h3>
+            <p>Successfully completed SSC with a score of 82%</p>
+        </div>
+        <div class="box">
+            <i class="fas fa-graduation-cap"></i>
+            <span>2021-2024</span>
+            <h3>Diploma</h3>
+            <p>Currently pursuing diploma in Computer Engineering</p>
+        </div>
+    </div>
+</section>
+
+<section class="projects" id="projects">
+    <h1 class="heading"> My <span>Projects</span></h1>
+    <div class="box-container">
+        <div class="big-box">
+            <div class="box">
+                <a href="" target="_blank">
+                    <img src="./assets/planet.png" alt="Planet Image"/>
+                </a>
+            </div>
+            <h4>Planet Weight Calculator</h4>
+        </div>
+        <div class="big-box">
+            <div class="box">
+                <a href="https://github.com/falak02/PRODIGY_WD_01.git" target="_blank">
+                    <img src="./assets/page.png" alt="Page Image"/>
+                </a>
+            </div>
+            <h4> A Simple landing page!</h4>
+        </div>
+        <div class="big-box">
+            <div class="box">
+                <a href="https://github.com/falak02/PRODIGY_WD_02.git" target="_blank">
+                    <img src="./assets/image.png" alt="watch">
+                </a>
+            </div>
+            <h4>Stopwatch!</h4>
+        </div>
+    </div>
+</section>
+
+<section class="contact" id="contact">
+    <h1 class="heading"><span>Contact</span> me</h1>
+    <div class="row">
+        <div class="content">
+            <h3 class="title">contact info</h3>
+            <div class="info">
+                <h3><i class="fas fa-envelope"></i><span>khanfalaknaaz786@gmail.com</span></h3>
+                <h3><i class="fas fa-phone"></i>8454941760</h3>
+                <h3><i class="fas fas fas fa-map-marker-alt"></i>Mumbai, India</h3>
+            </div>
+        </div>
+        <form action="">
+            <input type="text" placeholder="name" class="box">
+            <input type="email" placeholder="email" class="box">
+            <input type="text" placeholder="project" class="box">
+            <textarea name="" id="" cols="30" rows="10" class="box msg" placeholder="message"></textarea>
+            <button type="submit" class="btn"> send <i class="fas fa-paper-plane"></i></button>
+        </form>
+    </div>
+</section>
+
+<a href="#home" class="top">
+    <img src="./Rocket-Transparent-Background-PNG.png" alt="Rocket">
+</a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
