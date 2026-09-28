@@ -1,15 +1,12 @@
-name: Portfolio CI
+name: Portfolio CI/CD
 
 on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
 
 jobs:
-  check-portfolio:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -22,5 +19,28 @@ jobs:
           test -f styles.css
           test -f script.js
 
-      - name: CI successful
-        run: echo "Portfolio files checked successfully!"
+      - name: Setup SSH key
+        run: |
+          printf '%s\n' "${{ secrets.EC2_SSH_KEY }}" > ec2-key.pem
+          chmod 600 ec2-key.pem
+
+      - name: Prepare EC2
+        run: |
+          ssh -o StrictHostKeyChecking=no -i ec2-key.pem \
+          ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} \
+          "mkdir -p /tmp/portfolio"
+
+      - name: Deploy files to EC2
+        run: |
+          scp -o StrictHostKeyChecking=no -i ec2-key.pem -r \
+          index.html styles.css script.js assets \
+          ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}:/tmp/portfolio/
+
+      - name: Update Apache
+        run: |
+          ssh -o StrictHostKeyChecking=no -i ec2-key.pem \
+          ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} \
+          "sudo rm -rf /var/www/html/* && sudo cp -r /tmp/portfolio/* /var/www/html/"
+
+      - name: Deployment successful
+        run: echo "Portfolio deployed successfully to EC2!"
